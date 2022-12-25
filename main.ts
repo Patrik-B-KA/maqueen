@@ -20,14 +20,14 @@ let distance = 0
 let ultrasonicFlag = 0
 let executionFlag = 0
 let angle = 0
-angle = 30
+angle = 45
 maqueen.servoRun(maqueen.Servos.S1, angle)
 executionFlag = 1
 ultrasonicFlag = 1
 basic.forever(function () {
     distance = maqueen.Ultrasonic(PingUnit.Centimeters)
     if (ultrasonicFlag == 1) {
-        if (distance <= 6 && distance != 0) {
+        if (distance <= 5 && distance != 0) {
             executionFlag = 2
             ultrasonicFlag = 0
         } else {
